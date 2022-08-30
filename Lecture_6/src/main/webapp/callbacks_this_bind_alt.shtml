@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Author" content="Bjarte Kileng" />
+    <link rel="icon" href="data:," />
+
+    <script defer src="js/callbacks_this_bind_alt.js"></script>
+    <link href="fag.css" rel="stylesheet" type="text/css" />
+    <link href="dat108.css" rel="stylesheet" type="text/css" />
+    <title>Callbacks, this og bind med variasjon</title>
+  </head>
+
+  <body>
+    <h1>Callback, <var>this</var> og <var>bind</var> med variasjon</h1>
+    <p>All utskrift fra JavaScript-koden skrives til web konsollet.</p>
+
+    <div id="root"><button type="button">Klikk meg</button></div>
+
+    <p>JavaScript-koden er:</p>
+    <pre class="demo">class Demo {
+    constructor(rootElement) {
+        this.showThis('A');
+        
+        rootElement.querySelector("button[type='button']").addEventListener("click",() => {this.showThis('B')});
+
+        this.showThis = this.showThis.bind(this);
+        rootElement.querySelector("button[type='button']").addEventListener("click",() => {this.showThis('C')});
+   }
+
+    showThis (param) {
+        console.log(`${param}: this har verdien ${this}`);
+    }
+}
+
+function init() {
+    const rootElement = document.getElementById("root");
+    new Demo(rootElement);
+}
+
+document.addEventListener('DOMContentLoaded',init);</pre>
+  </body>
+</html>
+

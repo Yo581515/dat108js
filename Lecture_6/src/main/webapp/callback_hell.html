@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Author" content="Bjarte Kileng" />
+    <link rel="icon" href="data:," />
+
+    <script defer src="js/callback_hell.js"></script>
+    <link href="fag.css" rel="stylesheet" type="text/css" />
+    <link href="dat108.css" rel="stylesheet" type="text/css" />
+    <link href="callback.css" rel="stylesheet" type="text/css" />
+    <title>Callback hell</title>
+  </head>
+
+  <body>
+    <h1>Callback hell</h1>
+    <p>All utskrift fra JavaScript-koden skrives til web konsollet.</p>
+
+    <p id="root">
+      <button type="button">Klikk meg</button>
+    </p>
+
+    <p>JavaScript-koden er:</p>
+    <pre class="demo">"use strict";
+
+
+document.addEventListener("DOMContentLoaded",
+    () => {
+        const rootElm = document.getElementById("root");
+        let timer
+        rootElm.querySelector("button[type='button']").addEventListener("click",
+            (event) => {
+                window.setInterval(
+                    () => {
+                        event.target.classList.toggle("gyldig");
+                    }
+                ,2000)
+            }
+        )
+    }
+)</pre>
+
+  </body>
+</html>
+

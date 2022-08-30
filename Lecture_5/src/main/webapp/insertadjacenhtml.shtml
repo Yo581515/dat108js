@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Author" content="Bjarte Kileng" />
+    <link rel="icon" href="data:," />
+
+    <script defer src="js/insertadjacenhtml.js"></script>
+    <link href="fag.css" rel="stylesheet" type="text/css" />
+    <link href="dat108.css" rel="stylesheet" type="text/css" />
+    <title>insertAdjacentHTML</title>
+    <style>
+        .fruitcontroller_hidden {
+            display: none;
+        }
+
+        #root {
+            margin: 10px;
+            border: 1px solid red;
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+  </head>
+
+  <body>
+    <h1>insertAdjacentHTML</h1>
+
+    <div id="root">
+        <p><button type="button" data-addfruit>Legg til frukt</button><button type="button" data-clean>Tøm</button></p>
+        <div data-fruitlist>
+            <p>Diverse frukter:</p>
+            <ul></ul>
+        </div>
+    </div>
+
+
+    <p>JavaScript-koden som legger inn frukten på websiden:</p>
+    <pre class="demo">listElm.insertAdjacentHTML('beforeend', "&lt;li&gt;&lt;/li&gt;");
+listElm.lastElementChild.textContent = fruit;</pre>
+    <p>I koden over inneholder variabelen <var>frukt</var> teksten fra input elementet som ble fylt inn av bruker.</p>
+  </body>
+</html>
+

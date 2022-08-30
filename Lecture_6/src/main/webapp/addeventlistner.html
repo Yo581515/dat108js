@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Author" content="Bjarte Kileng" />
+    <link rel="icon" href="data:," />
+
+    <script defer src="js/addeventlistner.js"></script>
+    <link href="fag.css" rel="stylesheet" type="text/css" />
+    <link href="dat108.css" rel="stylesheet" type="text/css" />
+    <title>Knytte metode til hendelse på element</title>
+    </head>
+
+    <body>
+        <h1>Knytte metode til hendelse på element</h1>
+        <p>All utskrift fra JavaScript-koden skrives til web konsollet.</p>
+
+        <div id="root">
+            <button type="button">Klikk meg</button>
+        </div>
+
+        <p>Lytter for hendelse <var>click</var> er lagt til knappen over med følgende kode:</p>
+        <pre class="demo">buttonRef.addEventListener("click",helloWorld);</pre>
+        <p>Her er <var>buttonRef</var> en referanse til knappen <em>Klikk meg</em>, og argumentet
+          <var>helloWorld</var> er en funskjonsreferanse:</p>
+        <pre class="demo">function helloWorld () {
+    console.log("Hello world");
+}</pre>
+    </body>
+</html>
+

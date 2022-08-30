@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Author" content="Bjarte Kileng" />
+    <link rel="icon" href="data:," />
+
+    <script defer src="js/callback_envelope.js"></script>
+    <link href="fag.css" rel="stylesheet" type="text/css" />
+    <link href="dat108.css" rel="stylesheet" type="text/css" />
+    <link href="callback.css" rel="stylesheet" type="text/css" />
+    <title>Callback og omsluttende funksjon</title>
+</head>
+
+<body>
+    <h1>Callback og omsluttende funksjon</h1>
+    <p>All utskrift fra JavaScript-koden skrives til web konsollet.</p>
+
+    <p id="demoroot">
+        <button type="button" data-button="0">demo0</button>
+        <button type="button" data-button="1">demo1</button>
+        <button type="button" data-button="2">demo2</button>
+    </p>
+
+
+    <p>Lytter for klikk på <var>demo0</var> er lagt inn ved å bruke pil-notasjon for hendelseshåndterer.
+    Da vil <var>this</var> tas fra den omsluttende konteksten.</p>
+    <pre class="demo">const b0 = this.root.querySelector("button[data-button='0']");
+b0.addEventListener(
+    "click",
+    (event) => {this.demo(...)}
+);</pre>
+
+    <p>Lytter for klikk på <var>demo1</var> er lagt inn ved å bruke notasjon med <var>function</var> for hendelseshåndterer.
+    Da opprettes ny <var>this</var> og koden vil feile.</p>
+    <pre class="demo">const b1 = this.root.querySelector("button[data-button='1']");
+b1.addEventListener(
+    "click",
+    function(event){this.demo(event,"gyldig")}
+);</pre>
+
+    <p>Lytter for klikk på <var>demo2</var> bruker <var>function</var> og tar vare på nåværende verdi av <var>this</var>
+    i ny variabel <var>self</var> som brukes inne i hendelseshåndterer.</p>
+    <pre class="demo">const b2 = this.root.querySelector("button[data-button='2']");
+const self = this;
+b2.addEventListener(
+    "click",
+    function(event){self.demo(event,"gyldig")}
+);</pre>
+
+
+</html>

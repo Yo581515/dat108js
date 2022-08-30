@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Author" content="Bjarte Kileng" />
+    <link rel="icon" href="data:," />
+
+    <script defer src="js/insertadjacenhtml_xss.js"></script>
+    <link href="fag.css" rel="stylesheet" type="text/css" />
+    <link href="dat108.css" rel="stylesheet" type="text/css" />
+    <title>insertAdjacentHTML og XSS</title>
+    <style>
+        .fruitcontroller_hidden {
+            display: none;
+        }
+
+        #root {
+            margin: 10px;
+            border: 1px solid red;
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+  </head>
+
+  <body>
+    <h1>insertAdjacentHTML og XSS</h1>
+
+    <div id="root">
+        <p><button type="button" data-addfruit>Legg til frukt</button><button type="button" data-clean>Tøm</button></p>
+        <div data-fruitlist>
+            <p>Diverse frukter:</p>
+            <ul></ul>
+        </div>
+    </div>
+
+    <p>Forsøk f.eks. å legge til følgende <q>frukt</q>:</p>
+<pre class="demo">&lt;div style="margin:0;padding:0;background-color:white;position:fixed;top:0;left:0;width:100%;height:100%;font-size:3em;"&gt;&lt;p style="padding:10px"&gt;Betal 1000 kroner til kontonummer 1111.22.3333!&lt;/p&gt;&lt;/div&gt;</pre>
+
+    <p>JavaScript-koden som legger inn frukten på websiden:</p>
+    <pre class="demo">listElm.insertAdjacentHTML('beforeend', `&lt;li&gt;${fruit}&lt;/li&gt;`);</pre>
+    <p>I koden over inneholder variabelen <var>frukt</var> teksten fra input elementet som ble fylt inn av bruker.</p>
+  </body>
+</html>
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Author" content="Bjarte Kileng" />
+    <link rel="icon" href="data:," />
+
+    <script defer src="js/strict_g.js"></script>
+    <link href="fag.css" rel="stylesheet" type="text/css"/>
+    <link href="dat108.css" rel="stylesheet" type="text/css" />
+    <title>Global strict mode</title>
+  </head>
+
+  <body>
+    <h1>Global strict mode</h1>
+    <p>Sjekk web konsollet. Koden vil feile i  global strict mode.</p>
+    <p>JavaScript-koden er:</p>
+
+    <pre class="demo">"use strict";
+
+{
+    /**
+     * Aksesserer variabel som ikke er deklarert.
+     * Funksjonen feiler siden det her brukes "strict mode".
+     * "use strict" på begynnelsen av koden gir "strict mode" for hele kode-snutten.
+     */
+
+    number = 7
+    function demo0 () {
+        firstname = "Ole"
+        console.log(firstname)
+    }
+}
+</pre>
+  </body>
+</html>

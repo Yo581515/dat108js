@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Author" content="Bjarte Kileng" />
+    <link rel="icon" href="data:," />
+
+    <script defer src="js/callbacks_this_bind.js"></script>
+    <link href="fag.css" rel="stylesheet" type="text/css" />
+    <link href="dat108.css" rel="stylesheet" type="text/css" />
+    <title>Callbacks, this og bind</title>
+  </head>
+
+  <body>
+    <h1>Callback, <var>this</var> og <var>bind</var></h1>
+    <p>All utskrift fra JavaScript-koden skrives til web konsollet.</p>
+
+    <div id="root"><button type="button">Klikk meg</button></div>
+
+    <p>JavaScript-koden er:</p>
+    <pre class="demo">class Demo {
+    constructor(rootElement) {
+        console.log(`A: this har verdien ${this}`);
+
+        rootElement.querySelector("button[type='button']").addEventListener("click",this.showThisB);
+
+        this.showThisC = this.showThisC.bind(this);
+        rootElement.querySelector("button[type='button']").addEventListener("click",this.showThisC);
+    }
+
+    showThisB () {
+        console.log(`B: this har verdien ${this}`);
+    }
+
+    showThisC () {
+        console.log(`C: this har verdien ${this}`);
+    }
+}
+
+function init() {
+    const rootElement = document.getElementById("root");
+    new Demo(rootElement);
+}
+
+document.addEventListener('DOMContentLoaded',init);</pre>
+  </body>
+</html>
+

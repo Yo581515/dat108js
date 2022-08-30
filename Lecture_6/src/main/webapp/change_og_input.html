@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Author" content="Bjarte Kileng" />
+    <link rel="icon" href="data:," />
+
+    <script defer src="js/change_og_input.js"></script>
+    <link href="fag.css" rel="stylesheet" type="text/css" />
+    <link href="dat108.css" rel="stylesheet" type="text/css" />
+    <link href="submit.css" rel="stylesheet" type="text/css" />
+    <title>Hendelser change og input</title>
+  </head>
+
+  <body>
+    <h1>Hendelser <em>change</em> og <em>input</em></h1>
+
+    <p>Hendelsen <em>change</em> og <em>input</em> trigger begge ved endringer i FORM elementer. I utgangspunktet vil hendelse <em>input</em> fyre ved hver endring, mens <em>change</em>
+      når endringen er ferdig, typisk når bruker forlater elementet.</p>
+
+    <p>For elementer som SELECT og INPUT av type DATE oppfører <em>change</em> og <em>input</em> seg likt.</p>
+
+    <p>For INPUT av type DATE fyrer hendelsene kun hvis endringen involverer en gyldig dato. Ingen hendelser fyrer hvis bruker sletter en ufullstendig dato, eller endrer en ufullstendig dato til en annen ufullstendig dato. For dette elementet kan hendelsen <em>blur</em> være nyttig. Den fyrer når elementet mister fokus.</p>
+
+    <p>All utskrift fra JavaScript-koden skrives til web konsollet.</p>
+
+    <div id="root">
+      <fieldset>
+        <label for="i1">Input type text, hendelse input:</label><input type="text" id="i1" name="i1"/>
+
+        <label for="c1">Input type text, hendelse change:</label><input type="text" id="c1" name="c1"/>
+
+        <span class="column1">Input type radio, hendelse input:</span> <span><label>A: <input type="radio" name="i2" value="A"/></label> <label>B: <input type="radio" name="i2" value="B"/></label></span>
+
+        <span class="column1">Input type radio, hendelse change:</span> <span><label>A: <input type="radio" name="c2" value="A"/></label> <label>B: <input type="radio" name="c2" value="B"/></label></span>
+
+        <label for="i3">Select, hendelse input:</label>
+        <select id="i3" name="i3">
+          <option value="-1" selected>&lt;Velg verdi&gt;</option>
+          <option value="1">Valg A</option>
+          <option value="2">Valg B</option>
+          <option value="3">Valg C</option>
+          <option value="4">Valg D</option>
+        </select>
+
+        <label for="c3">Select, hendelse change:</label>
+        <select id="c3" name="c3">
+          <option value="-1" selected>&lt;Velg verdi&gt;</option>
+          <option value="1">Valg A</option>
+          <option value="2">Valg B</option>
+          <option value="3">Valg C</option>
+          <option value="4">Valg D</option>
+        </select>
+
+        <label for="i4">Input type date, hendelse input:</label><input type="date" id="i4" name="i4"/>
+
+        <label for="c4">Input type date, hendelse change:</label><input type="date" id="c4" name="c4"/>
+
+        <label for="b4">Input type date, hendelse blur:</label><input type="date" id="b4" name="b4"/>
+
+        <button type="button">Rens konsoll</button>
+      </fieldset>
+    </div>
+  </body>
+</html>
+

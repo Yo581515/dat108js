@@ -1,0 +1,7 @@
+min staesjonaer pc
+ -javaagent:"C:\Users\yfess\dat108javaScriptWorkspace\apache-tomee-8.0.12-microprofile\apache-tomee-microprofile-8.0.12\lib\openejb-javaagent.jar"
+
+
+
+min laptop
+ -javaagent:"C:\Users\yfess\dat152\apache-tomee-8.0.12-microprofile\apache-tomee-microprofile-8.0.12\lib\openejb-javaagent.jar"

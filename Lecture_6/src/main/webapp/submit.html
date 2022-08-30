@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Author" content="Bjarte Kileng" />
+    <link rel="icon" href="data:," />
+
+    <script defer src="js/submit.js"></script>
+    <link href="fag.css" rel="stylesheet" type="text/css" />
+    <link href="dat108.css" rel="stylesheet" type="text/css" />
+    <link href="submit.css" rel="stylesheet" type="text/css" />
+    <title>Hendelse submit</title>
+  </head>
+
+    <body>
+        <h1>Hendelse <em>submit</em></h1>
+
+        <p>Hendelse <em>submit</em> fyrer ved submit av FORM skjema. I dette eksempelet kjører vi en metode ved <em>submit</em>.
+          Denne metoden kansellerer så <em>submit</em> hendelsen sin standardoppførsel, som er å sende data til tjener. Det gjøres
+          ved å kalle hendelsen sin metoden <em>preventDefault</em>.</p>
+
+        <p>All utskrift fra JavaScript-koden skrives til web konsollet.</p>
+
+        <div id="root">
+            <form method="post" action="action.shtml">
+                <fieldset>
+                    <label for="fornavn">Fornavn:</label><input type="text" id="fornavn" placeholder="Ditt fornavn" data-firstname />
+                    <label for="etternavn">Etternavn:</label><input type="text" id="etternavn" placeholder="Ditt etternavn" data-lastname />
+                    <button type="submit">Send data</button>
+                </fieldset>
+            </form>
+        </div>
+
+        <p>Callback for submit av FORM-data er lagt til ved følgende JavaScript-kode:</p>
+        <pre class="demo">formElement.addEventListener("submit",callback);</pre>
+    </body>
+</html>
+

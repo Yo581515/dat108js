@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Author" content="Bjarte Kileng" />
+    <link rel="icon" href="data:," />
+
+    <script defer src="js/mouseover.js"></script>
+    <link href="fag.css" rel="stylesheet" type="text/css" />
+    <link href="dat108.css" rel="stylesheet" type="text/css" />
+    <link href="event.css" rel="stylesheet" type="text/css" />
+    <title>Hendelsene mouseover og mouseout</title>
+  </head>
+
+    <body>
+        <h1>Hendelsene <em>mouseover</em> og <em>mouseout</em></h1>
+
+        <p>Hendelsen  <em>mouseover</em> fyrer idet musepeker går inn over et element. og <em>mouseout</em> fyrer idet musepeker forlater et element.</p>
+
+        <p>I denne demonstrasjonen har begge INPUT elementene nedenfor lytter for <em>mouseover</em> og <em>mouseout</em>. Når musepeker flyttes inn over et av
+INPUT elementene vises en melding, og meldingen fjernes når musepeker flyttes ut av elementet.</p>
+
+        <div id="root">
+            <div data-input>
+                <label for="fornavn">Fornavn</label><input type="text" id="fornavn" placeholder="Ditt fornavn" data-firstname/>
+                <label for="etternavn">Etternavn</label><input type="text" id="etternavn" placeholder="Ditt etternavn" data-lastname/>
+            </div>
+            <div data-message></div>
+        </div>
+    </body>
+</html>
+

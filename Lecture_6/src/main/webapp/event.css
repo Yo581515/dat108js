@@ -1,0 +1,24 @@
+.hidden {
+    display: none;
+}
+
+div[data-input] {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    grid-gap:10px;
+}
+
+label::after {
+    content: ":";
+}
+
+div[data-message] {
+    margin: 10px 0;
+    border: 1px solid red;
+    padding: 0;
+}
+
+div[data-message] > p {
+    margin: 0;
+    padding: 5px;
+}

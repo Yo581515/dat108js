@@ -1,0 +1,16 @@
+/*
+#frame {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    grid-gap: 5em;
+}
+*/
+
+date-manager {
+    float:left;
+    margin-right: 2em;
+}
+
+date-manager:last-child {
+    margin-right: 0;
+}

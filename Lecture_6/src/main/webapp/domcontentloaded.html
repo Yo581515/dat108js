@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="Author" content="Bjarte Kileng" />
+      <link rel="icon" href="data:," />
+
+      <script defer src="js/domcontentloaded.js"></script>
+      <link href="fag.css" rel="stylesheet" type="text/css" />
+      <link href="dat108.css" rel="stylesheet" type="text/css" />
+      <title>Hendelse DOMContentLoaded</title>
+    </head>
+
+    <body>
+        <h1>Hendelse <em>DOMContentLoaded</em></h1>
+
+<p>Hendelse <em>DOMContentLoaded</em> fyrer når dokumentet er ferdig lastet.
+Denne demonstrasjonen kjører en metode ved denne hendelsen. Demonstrasjonen viser også
+at lytter for denne hendelsen må legges på kode som kjøres når dokumentet bygges.
+Det er for sent å legge på lytter for <em>DOMContentLoaded</em>
+etter at dokumentet er ferdig bygget.</p>
+
+        <p>All utskrift fra JavaScript-koden skrives til web konsollet.</p>
+
+        <p id="demoroot">
+            <button type="button">Demo</button>
+        </p>
+
+        <p>Dokumentet registerer callback for hendelse <var>DOMContentLoaded</var>
+          med følgende JavaScript kode:</p>
+        
+        <pre class="demo">document.addEventListener('DOMContentLoaded',init);</pre>
+        <p>Metoden <var>init</var> vil bla. skrive en melding i konsollet:</p>
+        <pre class="demo">A: Hendelse 'DOMContentLoaded' ...</pre>
+        
+        <p>Ved klikk på knappen registreres enda en callback for
+          <var>DOMContentLoaded</var> som skal skrive ut følgende melding i konsollet:</p>
+        <pre class="demo">B: Hendelse ...</pre>
+        <p>Meldingen blir aldri vist da <var>DOMContentLoaded</var> skjer før det er mulig å klikke på knappen.</p>
+
+        <p>Etter en tidsforsinkelse på 1 sekund registreres enda en callback for
+          <var>DOMContentLoaded</var> som skal skrive ut følgende melding i konsollet:</p>
+        <pre class="demo">C: Hendelse ...</pre>
+        <p>Meldingen blir aldri vist da <var>DOMContentLoaded</var> allerede har skjedd når callback blir registrert.</p>
+    </body>
+</html>
+

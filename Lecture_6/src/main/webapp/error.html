@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Author" content="Bjarte Kileng" />
+    <link rel="icon" href="data:," />
+
+    <script defer src="js/error.js"></script>
+    <link href="fag.css" rel="stylesheet" type="text/css" />
+    <link href="dat108.css" rel="stylesheet" type="text/css" />
+    <title>Hendelse error</title>
+  </head>
+
+  <body>
+    <h1>Hendelse <em>error</em></h1>
+
+    <p>Hendelsen <em>error</em> fyrer på <em>window</em> ved f.eks. feil i JavaScript-kode eller nettforbindelse.
+      I dette eksempelet kjøres en metode ved <em>error</em>. Denne metoden kansellerer så <em>error</em>
+      hendelsen sin standardoppførsel, som er å vise feilen i nettleser-konsollet. Det gjøres ved å kalle
+      hendelsen sin metoden <em>preventDefault</em>.</p>
+
+    <p>All utskrift fra JavaScript-koden skrives til web konsollet.</p>
+
+    <div id="demoHandler">
+      <p>
+        <button type="button" data-demo="demo0"></button>
+        <button type="button" data-demo="demo1"></button>
+      </p>
+      <pre data-viewelm></pre>
+    </div>
+  </body>
+</html>
+

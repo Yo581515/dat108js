@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Author" content="Bjarte Kileng" />
+    <link rel="icon" href="data:," />
+
+    <script defer src="js/invalid.js"></script>
+    <link href="fag.css" rel="stylesheet" type="text/css" />
+    <link href="dat108.css" rel="stylesheet" type="text/css" />
+    <link href="submit.css" rel="stylesheet" type="text/css" />
+    <title>Hendelse invalid</title>
+    </head>
+
+    <body>
+        <h1>Hendelse <em>invalid</em></h1>
+
+        <p>FORM <em>submit</em> blir automatisk kansellert når FORM kontroll-elementer har ugyldige data, og
+            hendelse <em>invalid</em> vil da skje (fyre) på kontroll-element med ugyldige data.</p>
+            
+         <p>Eksempler på FORM kontroll-elementer er f.eks. <var>input</var>, <var>select</var> og <var>radio</var>.</p>
+
+         <p>Data er ugyldig hvis FORM kontroll-element attributter som <em>pattern</em> og
+          <em>required</em> ikke er oppfylt.</p>
+
+        <p>Hendelse <var>invalid</var> kan også bli trigget uten først en FORM <em>submit</em>. Det skal vi se på i faget DAT152
+          der vi også skal ta kontroll på valideringsvinduet når data er ugyldig.
+          Da skal vi også se hvordan vi med JavaScript kan sette tiltand til invalid,
+          f.eks. hvis felt for passord og felt for repetert passord har ulike verdier.</p>
+
+        <p>Visining av data som ugyldig gjøres her ved CSS sin pseudoklasse <var>invalid</var>.</p>
+
+        <div id="root">
+            <form method="post" action="action.html">
+                <fieldset>
+                    <label for="fornavn">Fornavn:</label>
+                    <input type="text" id="fornavn" name="fornavn" placeholder="Dine fornavn"
+                        title="Fornavn må starte med stor bokstav, så små bokstaver"
+                        required pattern="\s*\p{Lu}\p{Ll}+(\s+\p{Lu}\p{Ll}+)*\s*"/>
+
+                    <label for="etternavn">Etternavn:</label>
+                    <input type="text" id="etternavn" name="etternavn" placeholder="Ditt etternavn"
+                        title="Etternavn må starte med stor bokstav, så små bokstaver"
+                        required pattern="\s*\p{Lu}\p{Ll}+\s*"/>
+
+                    <label for="telefon">Telefon:</label>
+                    <input type="tel" id="telefon" name="telefon" placeholder="Telefonnummer"
+                        title="Telefonnummer må inneholde minst 8 siffre, og kun siffre"
+                        required pattern="\s*\+?(\s*\d){8,}\s*"/>
+
+                    <button type="submit">Send data</button>
+                </fieldset>
+            </form>
+        </div>
+
+    <p>Callback for hendelse <var>invalid</var> er lagt til ved følgende JavaScript for hvert FORM kontroll-element:</p>
+    <pre class="demo">refInputElement.addEventListener("invalid",callback);</pre>
+
+        <p>Dette dokumenet inneholder følgende HTML:</p>
+        <pre class="demo">&lt;form method="post" action="action.html"&gt;
+    &lt;fieldset&gt;
+        &lt;label for="fornavn"&gt;Fornavn:&lt;/label&gt;
+        &lt;input type="text" id="fornavn" name="fornavn" placeholder="Dine fornavn"
+            title="Fornavn må starte med stor bokstav, så små bokstaver"
+            required pattern="\s*\p{Lu}\p{Ll}+(\s+\p{Lu}\p{Ll}+)*\s*"/&gt;
+
+        &lt;label for="etternavn"&gt;Etternavn:&lt;/label&gt;
+        &lt;input type="text" id="etternavn" name="etternavn" placeholder="Ditt etternavn"
+            title="Etternavn må starte med stor bokstav, så små bokstaver"
+            required pattern="\s*\p{Lu}\p{Ll}+\s*"/&gt;
+ 
+        &lt;label for="telefon"&gt;Telefon:&lt;/label&gt;
+        &lt;input type="tel" id="telefon" name="telefon" placeholder="Telefonnummer"
+            title="Telefonnummer må inneholde minst 8 siffre, og kun siffre"
+            required pattern="\s*\+?(\s*\d){8,}\s*"/&gt;
+
+        &lt;button type="submit"&gt;Send data&lt;/button&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;</pre>
+
+    </body>
+</html>
+

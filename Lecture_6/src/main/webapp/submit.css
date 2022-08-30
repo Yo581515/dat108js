@@ -1,0 +1,27 @@
+.hidden {
+    display: none;
+}
+
+#root fieldset {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    grid-gap:10px;
+}
+
+#root fieldset > button {
+    grid-column: 1/span 2;
+}
+
+#root fieldset > label, #root fieldset >.column1 {
+  text-align: right;
+}
+
+
+#root input:invalid {
+    border-color: red;
+}
+
+/* input {
+    border-color: red;
+} */
+
